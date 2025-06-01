@@ -11,12 +11,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export",
+    "export": "next build",
     "deploy:netlify": "npm run build && netlify deploy --prod --dir=out",
     "deploy:github": "npm run build && gh-pages -d out",
     "preview": "npm run build && npm run start"
   },
-  "homepage": "/3dcutoptimizer",
   "dependencies": {
     "@react-three/drei": "^10.1.2",
     "@react-three/fiber": "^9.1.2",
