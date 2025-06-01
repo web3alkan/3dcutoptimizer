@@ -5,15 +5,16 @@ const repoName = '3dcutoptimizer';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     unoptimized: true,
   },
-  output: 'export',
-  distDir: 'out',
-  basePath: isProd ? `/${repoName}` : '',
-  assetPrefix: isProd ? `/${repoName}/` : '',
-  trailingSlash: true,
+  ...(isProd && {
+    output: 'export',
+    distDir: 'out',
+    basePath: `/${repoName}`,
+    assetPrefix: `/${repoName}/`,
+    trailingSlash: true,
+  }),
   eslint: {
     ignoreDuringBuilds: true,
   },

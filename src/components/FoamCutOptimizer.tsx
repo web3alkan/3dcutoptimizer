@@ -1003,42 +1003,48 @@ export default function FoamCutOptimizer() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      {/* Modern Header */}
-      <div className="bg-white/80 backdrop-blur-lg border-b border-white/20 shadow-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-6">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
-                <Package className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+    <div className="min-h-screen relative">
+      {/* Modern Header with Glassmorphism */}
+      <div className="glass backdrop-blur-3xl border-b border-white/10 shadow-glass-lg sticky top-0 z-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="flex items-center space-x-4 animate-fadeInUp">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-3xl flex items-center justify-center shadow-glow-lg animate-pulse-subtle">
+                <Package className="w-6 h-6 sm:w-8 sm:h-8 text-white drop-shadow-lg" />
               </div>
               <div className="text-center sm:text-left">
-                <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold bg-gradient-to-r from-slate-800 to-blue-600 bg-clip-text text-transparent">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold gradient-text text-shadow-lg">
                   Sünger Kesim Optimizasyonu
                 </h1>
-                <p className="text-sm sm:text-base text-slate-600">3D optimizasyon ile minimum israf</p>
+                <p className="text-sm sm:text-base text-white/80 text-shadow mt-2">
+                  🚀 3D optimizasyon ile minimum israf
+                </p>
               </div>
             </div>
-            <div className="flex items-center space-x-2">
-              <div className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
-                v2.0 Pro
+            <div className="flex items-center space-x-3 animate-slideInRight">
+              <div className="px-4 py-2 glass rounded-2xl border border-white/20">
+                <div className="flex items-center space-x-2">
+                  <div className="px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-xl text-xs font-bold shadow-lg">
+                    v2.0 Pro
+                  </div>
+                  <Sparkles className="w-5 h-5 text-yellow-400 animate-spin-slow" />
+                </div>
               </div>
-              <Sparkles className="w-5 h-5 text-blue-500 animate-pulse" />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Efficiency Warning - Mobile Optimized */}
+      {/* Efficiency Warning - Enhanced Design */}
       {showEfficiencyWarning && (
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-4">
-          <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/50 rounded-2xl p-4 shadow-sm">
-            <div className="flex items-start space-x-3">
-              <div className="p-2 bg-amber-100 rounded-lg">
-                <Info className="w-4 h-4 text-amber-600" />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+          <div className="glass-card bg-gradient-to-r from-yellow-400/10 to-orange-500/10 border border-yellow-400/20 animate-fadeInUp">
+            <div className="flex items-start space-x-4">
+              <div className="p-3 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl shadow-lg animate-pulse-subtle">
+                <Info className="w-5 h-5 text-white" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-sm sm:text-base text-amber-800 font-medium break-words">
+                <p className="text-sm sm:text-base text-white font-medium break-words text-shadow">
                   {showEfficiencyWarning}
                 </p>
               </div>
@@ -1048,399 +1054,408 @@ export default function FoamCutOptimizer() {
       )}
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8">
-        {/* Mobile-First Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+        {/* Enhanced Mobile-First Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
           
           {/* Left Panel - Input Section */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-8">
             
-            {/* Stock Materials Card */}
-            <div className="bg-white/70 backdrop-blur-sm rounded-3xl border border-white/20 shadow-lg overflow-hidden">
-              <div className="bg-gradient-to-r from-orange-500 to-red-500 px-4 sm:px-6 py-4">
-                <h2 className="font-bold text-white flex items-center text-lg">
-                  <Package className="w-5 h-5 mr-2" />
-                  Ham Malzeme
+            {/* Stock Materials Card - Enhanced */}
+            <div className="glass-card bg-gradient-to-br from-orange-500/10 to-red-500/10 border border-orange-500/20 animate-fadeInUp">
+              <div className="bg-gradient-to-r from-orange-500 to-red-500 -m-6 mb-6 px-6 py-5 rounded-t-3xl">
+                <h2 className="font-bold text-white flex items-center text-lg sm:text-xl">
+                  <Package className="w-6 h-6 mr-3 animate-pulse-subtle" />
+                  🧱 Ham Malzeme
                 </h2>
-                <p className="text-orange-100 text-sm mt-1">Kesilecek sünger blokları</p>
+                <p className="text-orange-100 text-sm mt-2">Kesilecek sünger blokları</p>
               </div>
-              <div className="p-4 sm:p-6">
-                {/* Mobile-Friendly Input Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
-                  <input
-                    type="number"
-                    step="0.1"
-                    placeholder="Uzunluk"
-                    value={newStock.length}
-                    onChange={(e) => setNewStock({ ...newStock, length: e.target.value })}
-                    className="px-3 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm transition-all duration-200"
-                  />
-                  <input
-                    type="number"
-                    step="0.1"
-                    placeholder="Genişlik"
-                    value={newStock.width}
-                    onChange={(e) => setNewStock({ ...newStock, width: e.target.value })}
-                    className="px-3 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm transition-all duration-200"
-                  />
-                  <input
-                    type="number"
-                    step="0.1"
-                    placeholder="Kalınlık"
-                    value={newStock.height}
-                    onChange={(e) => setNewStock({ ...newStock, height: e.target.value })}
-                    className="px-3 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm transition-all duration-200"
-                  />
-                  <input
-                    type="number"
-                    placeholder="Adet"
-                    value={newStock.quantity}
-                    onChange={(e) => setNewStock({ ...newStock, quantity: e.target.value })}
-                    className="px-3 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 text-sm transition-all duration-200"
-                  />
-                </div>
+              
+              {/* Enhanced Input Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
+                <input
+                  type="number"
+                  step="0.1"
+                  placeholder="Uzunluk"
+                  value={newStock.length}
+                  onChange={(e) => setNewStock({ ...newStock, length: e.target.value })}
+                  className="input-modern"
+                />
+                <input
+                  type="number"
+                  step="0.1"
+                  placeholder="Genişlik"
+                  value={newStock.width}
+                  onChange={(e) => setNewStock({ ...newStock, width: e.target.value })}
+                  className="input-modern"
+                />
+                <input
+                  type="number"
+                  step="0.1"
+                  placeholder="Kalınlık"
+                  value={newStock.height}
+                  onChange={(e) => setNewStock({ ...newStock, height: e.target.value })}
+                  className="input-modern"
+                />
+                <input
+                  type="number"
+                  placeholder="Adet"
+                  value={newStock.quantity}
+                  onChange={(e) => setNewStock({ ...newStock, quantity: e.target.value })}
+                  className="input-modern"
+                />
                 <input
                   type="text"
                   placeholder="Malzeme adı (örn: Büyük Sünger Blok)"
                   value={newStock.label}
                   onChange={(e) => setNewStock({ ...newStock, label: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-orange-500 mb-4 text-sm transition-all duration-200"
+                  className="input-modern mb-6"
                 />
+                
                 <button
                   onClick={addStock}
-                  className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-4 py-3 rounded-xl flex items-center justify-center font-medium text-sm transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
+                  className="btn-modern btn-accent w-full flex items-center justify-center"
                 >
-                  <Plus className="w-4 h-4 mr-2" />
-                  Malzeme Ekle
+                  <Plus className="w-5 h-5 mr-2" />
+                  ✨ Malzeme Ekle
                 </button>
 
-                {/* Stock List */}
-                <div className="mt-4 space-y-3 max-h-48 overflow-y-auto">
+                {/* Enhanced Stock List */}
+                <div className="mt-6 space-y-3 max-h-48 overflow-y-auto">
                   {stockFoams.map((stock) => (
-                    <div key={stock.id} className="flex justify-between items-center bg-gradient-to-r from-orange-50 to-red-50 border border-orange-100 p-3 rounded-xl transition-all duration-200 hover:shadow-md">
-                      <div className="flex-1 min-w-0">
-                        <div className="font-medium text-gray-900 truncate">{stock.label}</div>
-                        <div className="text-sm text-gray-600">
-                          {stock.length}×{stock.width}×{stock.height}cm × {stock.quantity} adet
+                    <div key={stock.id} className="glass bg-gradient-to-r from-orange-500/5 to-red-500/5 border border-orange-500/20 p-4 rounded-2xl transition-all duration-300 hover:shadow-lg hover:scale-[1.02] animate-slideInRight">
+                      <div className="flex justify-between items-center">
+                        <div className="flex-1 min-w-0">
+                          <div className="font-semibold text-white truncate text-shadow">{stock.label}</div>
+                          <div className="text-sm text-white/80 text-shadow">
+                            📐 {stock.length}×{stock.width}×{stock.height}cm × {stock.quantity} adet
+                          </div>
                         </div>
+                        <button
+                          onClick={() => removeStock(stock.id)}
+                          className="ml-3 p-2 bg-red-500/20 text-red-400 hover:text-red-300 hover:bg-red-500/30 rounded-xl transition-all duration-200 backdrop-blur-sm"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
                       </div>
-                      <button
-                        onClick={() => removeStock(stock.id)}
-                        className="ml-3 p-2 text-red-500 hover:text-red-700 hover:bg-red-100 rounded-lg transition-all duration-200"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
 
-            {/* Cut Pieces Card */}
-            <div className="bg-white/70 backdrop-blur-sm rounded-3xl border border-white/20 shadow-lg overflow-hidden">
-              <div className="bg-gradient-to-r from-blue-500 to-purple-600 px-4 sm:px-6 py-4">
-                <div>
-                  <h2 className="font-bold text-white flex items-center text-lg">
-                    <Scissors className="w-5 h-5 mr-2" />
-                    Kesilecek Parçalar
-                  </h2>
-                  <p className="text-blue-100 text-sm mt-1">Üretilecek parça listesi</p>
-                </div>
+            {/* Cut Pieces Card - Enhanced */}
+            <div className="glass-card bg-gradient-to-br from-blue-500/10 to-purple-600/10 border border-blue-500/20 animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
+              <div className="bg-gradient-to-r from-blue-500 to-purple-600 -m-6 mb-6 px-6 py-5 rounded-t-3xl">
+                <h2 className="font-bold text-white flex items-center text-lg sm:text-xl">
+                  <Scissors className="w-6 h-6 mr-3 animate-pulse-subtle" />
+                  ✂️ Kesilecek Parçalar
+                </h2>
+                <p className="text-blue-100 text-sm mt-2">Üretilecek parça listesi</p>
               </div>
-              <div className="p-4 sm:p-6">
-                {/* Mobile-Optimized Input */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-4">
-                  <input
-                    type="number"
-                    step="0.1"
-                    placeholder="Uzunluk"
-                    value={newPiece.length}
-                    onChange={(e) => setNewPiece({ ...newPiece, length: e.target.value })}
-                    className="px-3 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-all duration-200"
-                  />
-                  <input
-                    type="number"
-                    step="0.1"
-                    placeholder="Genişlik"
-                    value={newPiece.width}
-                    onChange={(e) => setNewPiece({ ...newPiece, width: e.target.value })}
-                    className="px-3 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-all duration-200"
-                  />
-                  <input
-                    type="number"
-                    step="0.1"
-                    placeholder="Kalınlık"
-                    value={newPiece.height}
-                    onChange={(e) => setNewPiece({ ...newPiece, height: e.target.value })}
-                    className="px-3 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-all duration-200"
-                  />
-                </div>
-                
-                <div className="grid grid-cols-2 gap-3 mb-4">
-                  <input
-                    type="number"
-                    placeholder="Adet"
-                    value={newPiece.quantity}
-                    onChange={(e) => setNewPiece({ ...newPiece, quantity: e.target.value })}
-                    className="px-3 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm transition-all duration-200"
-                  />
-                  <button
-                    onClick={calculateMaxQuantity}
-                    className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-medium px-3 py-3 rounded-xl font-medium text-sm transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
-                    title="Bu parça için maksimum adet hesapla"
-                  >
-                    MAX ADET
-                  </button>
-                </div>
-
+              
+              {/* Enhanced Input Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
                 <input
-                  type="text"
-                  placeholder="Parça adı (örn: Koltuk Yastığı)"
-                  value={newPiece.label}
-                  onChange={(e) => setNewPiece({ ...newPiece, label: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 mb-4 text-sm transition-all duration-200"
+                  type="number"
+                  step="0.1"
+                  placeholder="Uzunluk"
+                  value={newPiece.length}
+                  onChange={(e) => setNewPiece({ ...newPiece, length: e.target.value })}
+                  className="input-modern"
+                />
+                <input
+                  type="number"
+                  step="0.1"
+                  placeholder="Genişlik"
+                  value={newPiece.width}
+                  onChange={(e) => setNewPiece({ ...newPiece, width: e.target.value })}
+                  className="input-modern"
+                />
+                <input
+                  type="number"
+                  step="0.1"
+                  placeholder="Kalınlık"
+                  value={newPiece.height}
+                  onChange={(e) => setNewPiece({ ...newPiece, height: e.target.value })}
+                  className="input-modern"
+                />
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <input
+                  type="number"
+                  placeholder="Adet"
+                  value={newPiece.quantity}
+                  onChange={(e) => setNewPiece({ ...newPiece, quantity: e.target.value })}
+                  className="input-modern"
                 />
                 <button
-                  onClick={addPiece}
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-4 py-3 rounded-xl flex items-center justify-center font-medium text-sm transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
+                  onClick={calculateMaxQuantity}
+                  className="btn-modern bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold text-sm"
+                  title="Bu parça için maksimum adet hesapla"
                 >
-                  <Plus className="w-4 h-4 mr-2" />
-                  Parça Ekle
+                  🎯 MAX ADET
+                </button>
+              </div>
+
+              <input
+                type="text"
+                placeholder="Parça adı (örn: Koltuk Yastığı)"
+                value={newPiece.label}
+                onChange={(e) => setNewPiece({ ...newPiece, label: e.target.value })}
+                className="input-modern mb-6"
+              />
+              
+              <button
+                onClick={addPiece}
+                className="btn-modern btn-secondary w-full flex items-center justify-center"
+              >
+                <Plus className="w-5 h-5 mr-2" />
+                🎯 Parça Ekle
+              </button>
+
+              {/* Enhanced Pieces List */}
+              <div className="mt-6 space-y-3 max-h-64 overflow-y-auto">
+                {pieces.map((piece) => (
+                  <div key={piece.id} className="glass bg-gradient-to-r from-blue-500/5 to-purple-600/5 border border-blue-500/20 p-4 rounded-2xl transition-all duration-300 hover:shadow-lg hover:scale-[1.02] animate-slideInRight">
+                    {editingPiece === piece.id ? (
+                      // Enhanced Edit Mode
+                      <div className="space-y-4">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                          <input
+                            type="number"
+                            step="0.1"
+                            placeholder="Uzunluk"
+                            value={editForm.length}
+                            onChange={(e) => setEditForm({ ...editForm, length: e.target.value })}
+                            className="input-modern"
+                          />
+                          <input
+                            type="number"
+                            step="0.1"
+                            placeholder="Genişlik"
+                            value={editForm.width}
+                            onChange={(e) => setEditForm({ ...editForm, width: e.target.value })}
+                            className="input-modern"
+                          />
+                          <input
+                            type="number"
+                            step="0.1"
+                            placeholder="Kalınlık"
+                            value={editForm.height}
+                            onChange={(e) => setEditForm({ ...editForm, height: e.target.value })}
+                            className="input-modern"
+                          />
+                        </div>
+                        <div className="grid grid-cols-2 gap-3">
+                          <input
+                            type="number"
+                            placeholder="Adet"
+                            value={editForm.quantity}
+                            onChange={(e) => setEditForm({ ...editForm, quantity: e.target.value })}
+                            className="input-modern"
+                          />
+                          <input
+                            type="text"
+                            placeholder="Parça adı"
+                            value={editForm.label}
+                            onChange={(e) => setEditForm({ ...editForm, label: e.target.value })}
+                            className="input-modern"
+                          />
+                        </div>
+                        <div className="flex gap-3">
+                          <button
+                            onClick={saveEditPiece}
+                            className="btn-modern btn-secondary flex-1 flex items-center justify-center text-sm"
+                          >
+                            <Save className="w-4 h-4 mr-2" />
+                            💾 Kaydet
+                          </button>
+                          <button
+                            onClick={cancelEdit}
+                            className="btn-modern bg-gray-500 hover:bg-gray-600 flex-1 flex items-center justify-center text-sm"
+                          >
+                            <X className="w-4 h-4 mr-2" />
+                            ❌ İptal
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      // Enhanced View Mode
+                      <div className="flex justify-between items-center">
+                        <div className="flex-1 min-w-0">
+                          <div className="font-semibold text-white truncate text-shadow">{piece.label}</div>
+                          <div className="text-sm text-white/80 text-shadow">
+                            📐 {piece.length}×{piece.width}×{piece.height}cm × {piece.quantity} adet
+                          </div>
+                        </div>
+                        <div className="flex gap-2 ml-3">
+                          <button
+                            onClick={() => startEditPiece(piece)}
+                            className="p-2 bg-blue-500/20 text-blue-400 hover:text-blue-300 hover:bg-blue-500/30 rounded-xl transition-all duration-200 backdrop-blur-sm"
+                            title="Düzenle"
+                          >
+                            <Edit3 className="w-4 h-4" />
+                          </button>
+                          <button
+                            onClick={() => removePiece(piece.id)}
+                            className="p-2 bg-red-500/20 text-red-400 hover:text-red-300 hover:bg-red-500/30 rounded-xl transition-all duration-200 backdrop-blur-sm"
+                            title="Sil"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ))}
+                {pieces.length === 0 && (
+                  <div className="text-center text-gray-500 py-12 border-2 border-dashed border-gray-200 rounded-2xl">
+                    <Scissors className="w-12 h-12 mx-auto mb-4 text-gray-300" />
+                    <p className="text-lg font-medium">Henüz parça eklenmedi</p>
+                    <p className="text-sm mt-1">Yukarıdaki formu kullanarak parça ekleyin</p>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Enhanced Action Buttons Section */}
+            <div className="glass-card bg-gradient-to-br from-emerald-500/10 to-teal-600/10 border border-emerald-500/20 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
+              <div className="bg-gradient-to-r from-emerald-500 to-teal-600 -m-6 mb-6 px-6 py-5 rounded-t-3xl">
+                <h2 className="font-bold text-white flex items-center text-lg sm:text-xl">
+                  <Sparkles className="w-6 h-6 mr-3 animate-spin-slow" />
+                  🚀 Optimizasyon Seçenekleri
+                </h2>
+                <p className="text-emerald-100 text-sm mt-2">En uygun algoritmayi seçin</p>
+              </div>
+              
+              <div className="space-y-4">
+                <button
+                  onClick={calculateOptimization}
+                  disabled={pieces.length === 0 || isCalculating}
+                  className="btn-modern btn-secondary w-full py-4 text-base flex items-center justify-center"
+                >
+                  {isCalculating ? (
+                    <>
+                      <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-3"></div>
+                      ⚡ Hesaplanıyor...
+                    </>
+                  ) : (
+                    <>
+                      <Calculator className="w-6 h-6 mr-3" />
+                      🎯 Temel Optimizasyon
+                    </>
+                  )}
                 </button>
 
-                {/* Pieces List - Mobile Optimized */}
-                <div className="mt-4 space-y-3 max-h-64 overflow-y-auto">
-                  {pieces.map((piece) => (
-                    <div key={piece.id} className="bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 p-3 rounded-xl transition-all duration-200 hover:shadow-md">
-                      {editingPiece === piece.id ? (
-                        // Edit Mode - Mobile Optimized
-                        <div className="space-y-3">
-                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                            <input
-                              type="number"
-                              step="0.1"
-                              placeholder="Uzunluk"
-                              value={editForm.length}
-                              onChange={(e) => setEditForm({ ...editForm, length: e.target.value })}
-                              className="px-2 py-2 border border-gray-300 rounded-lg text-sm"
-                            />
-                            <input
-                              type="number"
-                              step="0.1"
-                              placeholder="Genişlik"
-                              value={editForm.width}
-                              onChange={(e) => setEditForm({ ...editForm, width: e.target.value })}
-                              className="px-2 py-2 border border-gray-300 rounded-lg text-sm"
-                            />
-                            <input
-                              type="number"
-                              step="0.1"
-                              placeholder="Kalınlık"
-                              value={editForm.height}
-                              onChange={(e) => setEditForm({ ...editForm, height: e.target.value })}
-                              className="px-2 py-2 border border-gray-300 rounded-lg text-sm"
-                            />
-                          </div>
-                          <div className="grid grid-cols-2 gap-2">
-                            <input
-                              type="number"
-                              placeholder="Adet"
-                              value={editForm.quantity}
-                              onChange={(e) => setEditForm({ ...editForm, quantity: e.target.value })}
-                              className="px-2 py-2 border border-gray-300 rounded-lg text-sm"
-                            />
-                            <input
-                              type="text"
-                              placeholder="Parça adı"
-                              value={editForm.label}
-                              onChange={(e) => setEditForm({ ...editForm, label: e.target.value })}
-                              className="px-2 py-2 border border-gray-300 rounded-lg text-sm"
-                            />
-                          </div>
-                          <div className="flex gap-2">
-                            <button
-                              onClick={saveEditPiece}
-                              className="flex-1 bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-lg text-sm flex items-center justify-center transition-all duration-200"
-                            >
-                              <Save className="w-3 h-3 mr-1" />
-                              Kaydet
-                            </button>
-                            <button
-                              onClick={cancelEdit}
-                              className="flex-1 bg-gray-500 hover:bg-gray-600 text-white px-3 py-2 rounded-lg text-sm flex items-center justify-center transition-all duration-200"
-                            >
-                              <X className="w-3 h-3 mr-1" />
-                              İptal
-                            </button>
-                          </div>
-                        </div>
-                      ) : (
-                        // View Mode - Mobile Optimized
-                        <div className="flex justify-between items-center">
-                          <div className="flex-1 min-w-0">
-                            <div className="font-medium text-gray-900 truncate">{piece.label}</div>
-                            <div className="text-sm text-gray-600">
-                              {piece.length}×{piece.width}×{piece.height}cm × {piece.quantity} adet
-                            </div>
-                          </div>
-                          <div className="flex gap-1 ml-3">
-                            <button
-                              onClick={() => startEditPiece(piece)}
-                              className="p-2 text-blue-500 hover:text-blue-700 hover:bg-blue-100 rounded-lg transition-all duration-200"
-                              title="Düzenle"
-                            >
-                              <Edit3 className="w-4 h-4" />
-                            </button>
-                            <button
-                              onClick={() => removePiece(piece.id)}
-                              className="p-2 text-red-500 hover:text-red-700 hover:bg-red-100 rounded-lg transition-all duration-200"
-                              title="Sil"
-                            >
-                              <Trash2 className="w-4 h-4" />
-                            </button>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                  {pieces.length === 0 && (
-                    <div className="text-center text-gray-500 py-12 border-2 border-dashed border-gray-200 rounded-2xl">
-                      <Scissors className="w-12 h-12 mx-auto mb-4 text-gray-300" />
-                      <p className="text-lg font-medium">Henüz parça eklenmedi</p>
-                      <p className="text-sm mt-1">Yukarıdaki formu kullanarak parça ekleyin</p>
-                    </div>
+                <button
+                  onClick={calculateRealisticCutting}
+                  disabled={pieces.length === 0 || isCalculating}
+                  className="btn-modern btn-accent w-full py-4 text-base flex items-center justify-center"
+                >
+                  {isCalculating ? (
+                    <>
+                      <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-3"></div>
+                      🔪 Kesim hesaplanıyor...
+                    </>
+                  ) : (
+                    <>
+                      <Scissors className="w-6 h-6 mr-3" />
+                      🔪 Gerçek Makine Kesimi
+                    </>
                   )}
+                </button>
+
+                <button
+                  onClick={() => calculateAdvancedOptimization('adaptive')}
+                  disabled={pieces.length === 0 || isCalculating}
+                  className="btn-modern bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 w-full py-4 text-base flex items-center justify-center"
+                >
+                  {isCalculating && optimizationProgress.total === 1 ? (
+                    <>
+                      <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white mr-3"></div>
+                      🧠 {optimizationProgress.currentAlgorithm || 'Hesaplanıyor...'}
+                    </>
+                  ) : (
+                    <>
+                      <Brain className="w-6 h-6 mr-3" />
+                      🧠 Akıllı Optimizasyon
+                    </>
+                  )}
+                </button>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <button
+                    onClick={() => calculateAdvancedOptimization('multi')}
+                    disabled={pieces.length === 0 || isCalculating}
+                    className="btn-modern bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 py-3 text-sm flex items-center justify-center"
+                  >
+                    {isCalculating && optimizationProgress.total === 3 && optimizationProgress.stage.includes('Multi') ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                        <span className="text-xs">
+                          {optimizationProgress.completed}/{optimizationProgress.total}
+                        </span>
+                      </>
+                    ) : (
+                      '🏆 Multi-Algo'
+                    )}
+                  </button>
+                  
+                  <button
+                    onClick={() => calculateAdvancedOptimization('hybrid')}
+                    disabled={pieces.length === 0 || isCalculating}
+                    className="btn-modern bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 py-3 text-sm flex items-center justify-center"
+                  >
+                    {isCalculating && optimizationProgress.total === 3 && optimizationProgress.stage.includes('Hybrid') ? (
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                        <span className="text-xs">
+                          {optimizationProgress.completed}/{optimizationProgress.total}
+                        </span>
+                      </>
+                    ) : (
+                      '🔬 Hibrit'
+                    )}
+                  </button>
                 </div>
               </div>
             </div>
 
-            {/* Action Buttons - Mobile Optimized */}
-            <div className="space-y-4">
-              <button
-                onClick={calculateOptimization}
-                disabled={pieces.length === 0 || isCalculating}
-                className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-bold py-4 rounded-2xl flex items-center justify-center text-base transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:transform-none"
-              >
-                {isCalculating ? (
-                  <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
-                    Hesaplanıyor...
-                  </>
-                ) : (
-                  <>
-                    <Calculator className="w-5 h-5 mr-3" />
-                    Temel Optimizasyon
-                  </>
-                )}
-              </button>
-
-              <button
-                onClick={calculateRealisticCutting}
-                disabled={pieces.length === 0 || isCalculating}
-                className="w-full bg-gradient-to-r from-red-500 to-orange-600 hover:from-red-600 hover:to-orange-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-bold py-4 rounded-2xl flex items-center justify-center text-base transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:transform-none"
-              >
-                {isCalculating ? (
-                  <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
-                    Kesim hesaplanıyor...
-                  </>
-                ) : (
-                  <>
-                    <Scissors className="w-5 h-5 mr-3" />
-                    🔪 Gerçek Makine Kesimi
-                  </>
-                )}
-              </button>
-
-              {/* Advanced Buttons */}
-              <button
-                onClick={() => calculateAdvancedOptimization('adaptive')}
-                disabled={pieces.length === 0 || isCalculating}
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-bold py-4 rounded-2xl flex items-center justify-center text-base transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:transform-none"
-              >
-                {isCalculating && optimizationProgress.total === 1 ? (
-                  <>
-                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
-                    {optimizationProgress.currentAlgorithm || 'Hesaplanıyor...'}
-                  </>
-                ) : (
-                  <>
-                    <Sparkles className="w-5 h-5 mr-3" />
-                    🎯 Akıllı Optimizasyon
-                  </>
-                )}
-              </button>
-              
-              <div className="grid grid-cols-2 gap-3">
-                <button
-                  onClick={() => calculateAdvancedOptimization('multi')}
-                  disabled={pieces.length === 0 || isCalculating}
-                  className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 disabled:from-gray-400 disabled:to-gray-500 text-white font-bold py-3 px-4 rounded-2xl flex items-center justify-center text-sm transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:transform-none"
-                >
-                  {isCalculating && optimizationProgress.total === 3 && optimizationProgress.stage.includes('Multi') ? (
-                    <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                      <span className="text-xs">
-                        {optimizationProgress.completed}/{optimizationProgress.total}
-                      </span>
-                    </>
-                  ) : (
-                    '🏆 Multi-Algo'
-                  )}
-                </button>
-                
-                <button
-                  onClick={() => calculateAdvancedOptimization('hybrid')}
-                  disabled={pieces.length === 0 || isCalculating}
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 disabled:from-gray-400 disabled:to-gray-500 text-white font-bold py-3 px-4 rounded-2xl flex items-center justify-center text-sm transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-[1.02] disabled:transform-none"
-                >
-                  {isCalculating && optimizationProgress.total === 3 && optimizationProgress.stage.includes('Hybrid') ? (
-                    <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                      <span className="text-xs">
-                        {optimizationProgress.completed}/{optimizationProgress.total}
-                      </span>
-                    </>
-                  ) : (
-                    '🔬 Hibrit'
-                  )}
-                </button>
-              </div>
-            </div>
-
-            {/* Progress Indicator - Mobile Optimized */}
+            {/* Enhanced Progress Indicator */}
             {isCalculating && optimizationProgress.progress > 0 && (
-              <div className="bg-white/70 backdrop-blur-sm border border-white/20 rounded-2xl p-4 shadow-lg">
-                <div className="flex items-center justify-between mb-3">
+              <div className="glass-card bg-gradient-to-br from-blue-500/10 to-purple-600/10 border border-blue-500/20 animate-pulse-subtle">
+                <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center">
-                    <div className="p-2 bg-blue-100 rounded-lg mr-3">
-                      <Brain className="w-4 h-4 text-blue-500" />
+                    <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mr-3 animate-pulse-subtle">
+                      <Brain className="w-5 h-5 text-white" />
                     </div>
-                    <span className="text-sm font-medium text-gray-700">İşlem Durumu</span>
+                    <span className="text-sm font-semibold text-white text-shadow">🔄 İşlem Durumu</span>
                   </div>
-                  <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+                  <span className="text-xs text-white/80 bg-white/10 px-3 py-1 rounded-xl backdrop-blur-sm">
                     {optimizationProgress.completed}/{optimizationProgress.total}
                   </span>
                 </div>
                 
-                <div className="mb-3">
-                  <div className="flex justify-between text-xs text-gray-600 mb-2">
-                    <span className="truncate">{optimizationProgress.stage}</span>
-                    <span className="ml-2">{Math.round(optimizationProgress.progress)}%</span>
+                <div className="mb-4">
+                  <div className="flex justify-between text-xs text-white/80 mb-3">
+                    <span className="truncate text-shadow">{optimizationProgress.stage}</span>
+                    <span className="ml-2 font-bold">{Math.round(optimizationProgress.progress)}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div className="w-full bg-white/20 rounded-full h-4 backdrop-blur-sm">
                     <div 
-                      className="bg-gradient-to-r from-blue-500 to-purple-500 h-3 rounded-full transition-all duration-500 ease-out"
+                      className="bg-gradient-to-r from-blue-400 to-purple-500 h-4 rounded-full transition-all duration-500 ease-out shadow-glow animate-pulse-subtle"
                       style={{ width: `${optimizationProgress.progress}%` }}
                     ></div>
                   </div>
                 </div>
                 
                 {optimizationProgress.currentAlgorithm && (
-                  <div className="flex items-center justify-center bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl py-3">
-                    <Zap className="w-4 h-4 text-blue-500 mr-2" />
-                    <span className="text-sm font-medium text-blue-700">
-                      {optimizationProgress.currentAlgorithm}
+                  <div className="flex items-center justify-center glass rounded-2xl py-4">
+                    <Zap className="w-5 h-5 text-yellow-400 mr-3 animate-pulse" />
+                    <span className="text-sm font-semibold text-white text-shadow">
+                      ⚡ {optimizationProgress.currentAlgorithm}
                     </span>
                   </div>
                 )}
@@ -1448,92 +1463,109 @@ export default function FoamCutOptimizer() {
             )}
           </div>
 
-          {/* Right Panel - Results */}
-          <div className="lg:col-span-7 space-y-6">
+          {/* Right Panel - Enhanced Results */}
+          <div className="lg:col-span-7 space-y-8">
             
-            {/* Stats Cards */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white/70 backdrop-blur-sm border border-white/20 rounded-2xl p-4 sm:p-6 text-center shadow-lg">
-                <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-1">{stats.totalPieces}</div>
-                <div className="text-xs sm:text-sm text-gray-600 font-medium">Toplam Parça</div>
+            {/* Enhanced Stats Cards */}
+            <div className="grid grid-cols-2 gap-6">
+              <div className="glass-card bg-gradient-to-br from-blue-500/10 to-purple-600/10 border border-blue-500/20 text-center animate-fadeInUp">
+                <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                  <Package className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-3xl sm:text-4xl font-bold gradient-text mb-2">{stats.totalPieces}</div>
+                <div className="text-sm text-white/80 font-medium text-shadow">📦 Toplam Parça</div>
               </div>
-              <div className="bg-white/70 backdrop-blur-sm border border-white/20 rounded-2xl p-4 sm:p-6 text-center shadow-lg">
-                <div className="text-2xl sm:text-3xl font-bold text-green-600 mb-1">
+              <div className="glass-card bg-gradient-to-br from-emerald-500/10 to-teal-600/10 border border-emerald-500/20 text-center animate-fadeInUp" style={{ animationDelay: '0.1s' }}>
+                <div className="p-2 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                  <Calculator className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-3xl sm:text-4xl font-bold gradient-text mb-2">
                   {(stats.totalVolume / 1000).toFixed(1)}L
                 </div>
-                <div className="text-xs sm:text-sm text-gray-600 font-medium">Toplam Hacim</div>
+                <div className="text-sm text-white/80 font-medium text-shadow">📊 Toplam Hacim</div>
               </div>
             </div>
 
-            {/* Optimization Results */}
+            {/* Enhanced Optimization Results */}
             {optimizationResult && (
-              <div className="bg-white/70 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg overflow-hidden">
-                <div className="bg-gradient-to-r from-emerald-500 to-teal-600 px-4 sm:px-6 py-4">
-                  <h2 className="font-bold text-white text-lg">Optimizasyon Sonuçları</h2>
-                  <p className="text-emerald-100 text-sm mt-1">Hesaplama tamamlandı</p>
+              <div className="glass-card bg-gradient-to-br from-emerald-500/10 to-teal-600/10 border border-emerald-500/20 animate-fadeInUp">
+                <div className="bg-gradient-to-r from-emerald-500 to-teal-600 -m-6 mb-6 px-6 py-5 rounded-t-3xl">
+                  <h2 className="font-bold text-white text-lg sm:text-xl flex items-center">
+                    <Sparkles className="w-6 h-6 mr-3 animate-pulse-subtle" />
+                    ✅ Optimizasyon Sonuçları
+                  </h2>
+                  <p className="text-emerald-100 text-sm mt-2">Hesaplama tamamlandı!</p>
                 </div>
-                <div className="p-4 sm:p-6">
-                  <div className="grid grid-cols-3 gap-4 mb-4">
-                    <div className="text-center">
-                      <div className="text-xl sm:text-2xl font-bold text-orange-600 mb-1">{optimizationResult.layouts.length}</div>
-                      <div className="text-xs text-gray-600 font-medium">Kullanılan Blok</div>
+                <div className="grid grid-cols-3 gap-6 mb-6">
+                  <div className="text-center">
+                    <div className="p-2 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                      <Package className="w-6 h-6 text-white" />
                     </div>
-                    <div className="text-center">
-                      <div className="text-xl sm:text-2xl font-bold text-green-600 mb-1">{optimizationResult.efficiency.toFixed(1)}%</div>
-                      <div className="text-xs text-gray-600 font-medium">Verimlilik</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-white text-shadow mb-1">{optimizationResult.layouts.length}</div>
+                    <div className="text-xs text-white/80 font-medium text-shadow">🧱 Kullanılan Blok</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="p-2 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                      <Zap className="w-6 h-6 text-white" />
                     </div>
-                    <div className="text-center">
-                      <div className="text-xl sm:text-2xl font-bold text-red-600 mb-1">{optimizationResult.totalWaste.toFixed(1)}%</div>
-                      <div className="text-xs text-gray-600 font-medium">Fire</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-white text-shadow mb-1">{optimizationResult.efficiency.toFixed(1)}%</div>
+                    <div className="text-xs text-white/80 font-medium text-shadow">⚡ Verimlilik</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="p-2 bg-gradient-to-br from-red-500 to-pink-500 rounded-2xl w-12 h-12 mx-auto mb-3 flex items-center justify-center">
+                      <Trash2 className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="text-2xl sm:text-3xl font-bold text-white text-shadow mb-1">{optimizationResult.totalWaste.toFixed(1)}%</div>
+                    <div className="text-xs text-white/80 font-medium text-shadow">🔥 Fire</div>
+                  </div>
+                </div>
+                
+                {/* Enhanced Waste Optimization */}
+                {optimizationResult.totalWaste > 5 && (
+                  <div className="glass bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-2xl p-5">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                      <div>
+                        <h4 className="font-medium text-yellow-800 text-sm">Fire Azaltılabilir</h4>
+                        <p className="text-xs text-yellow-600">Kalan parçalar daha küçük parçalara bölünebilir</p>
+                      </div>
+                      <button
+                        onClick={optimizeWaste}
+                        disabled={isCalculating}
+                        className="btn-modern bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-sm px-4 py-2"
+                      >
+                        {isCalculating ? (
+                          <>
+                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                            ⚡ Hesaplıyor...
+                          </>
+                        ) : (
+                          <>
+                            <Scissors className="w-4 h-4 mr-2" />
+                            🔧 Fireyi Azalt
+                          </>
+                        )}
+                      </button>
                     </div>
                   </div>
-                  
-                  {/* Waste Optimization */}
-                  {optimizationResult.totalWaste > 5 && (
-                    <div className="mt-4 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-xl">
-                      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                        <div>
-                          <h4 className="font-medium text-yellow-800 text-sm">Fire Azaltılabilir</h4>
-                          <p className="text-xs text-yellow-600">Kalan parçalar daha küçük parçalara bölünebilir</p>
-                        </div>
-                        <button
-                          onClick={optimizeWaste}
-                          disabled={isCalculating}
-                          className="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 disabled:bg-gray-400 text-white font-medium px-4 py-2 rounded-xl flex items-center justify-center text-sm transition-all duration-200"
-                        >
-                          {isCalculating ? (
-                            <>
-                              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                              Hesaplıyor...
-                            </>
-                          ) : (
-                            <>
-                              <Scissors className="w-4 h-4 mr-2" />
-                              Fireyi Azalt
-                            </>
-                          )}
-                        </button>
-                      </div>
-                    </div>
-                  )}
-                </div>
+                )}
               </div>
             )}
 
-            {/* 3D Visualization */}
-            <div className="bg-white/70 backdrop-blur-sm rounded-2xl border border-white/20 shadow-lg overflow-hidden">
-              <div className="bg-gradient-to-r from-purple-500 to-indigo-600 px-4 sm:px-6 py-4">
-                <h2 className="font-bold text-white text-lg">3D Görselleştirme</h2>
-                <p className="text-purple-100 text-sm mt-1">İnteraktif 3D model</p>
+            {/* Enhanced 3D Visualization */}
+            <div className="glass-card bg-gradient-to-br from-purple-500/10 to-indigo-600/10 border border-purple-500/20 animate-fadeInUp" style={{ animationDelay: '0.2s' }}>
+              <div className="bg-gradient-to-r from-purple-500 to-indigo-600 -m-6 mb-6 px-6 py-5 rounded-t-3xl">
+                <h2 className="font-bold text-white text-lg sm:text-xl flex items-center">
+                  <Grid3X3 className="w-6 h-6 mr-3 animate-pulse-subtle" />
+                  🎮 3D Görselleştirme
+                </h2>
+                <p className="text-purple-100 text-sm mt-2">İnteraktif 3D model</p>
               </div>
-              <div className="p-4 sm:p-6 lg:p-8">
-                <div className="min-h-64 sm:min-h-80 lg:min-h-96 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl border border-gray-200 overflow-hidden">
-                  <FoamPiece3D 
-                    pieces={pieces} 
-                    stockFoams={stockFoams}
-                    optimizationResult={optimizationResult}
-                  />
-                </div>
+              <div className="min-h-64 sm:min-h-80 lg:min-h-96 glass rounded-2xl border border-white/10 overflow-hidden">
+                <FoamPiece3D 
+                  pieces={pieces} 
+                  stockFoams={stockFoams}
+                  optimizationResult={optimizationResult}
+                />
               </div>
             </div>
           </div>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -12,7 +12,11 @@ export const metadata: Metadata = {
   description: "3D sünger kesimi için minimum israf ile optimum yerleştirme hesaplama aracı. En az malzeme kaybı ile sünger parçalarınızı optimize edin.",
   keywords: "sünger kesim, 3D optimizasyon, malzeme optimizasyonu, bin packing, foam cutting",
   authors: [{ name: "Foam Cut Optimizer" }],
-  viewport: "width=device-width, initial-scale=1",
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 };
 
 export default function RootLayout({
