@@ -3,12 +3,16 @@
 import { useState, useMemo, useEffect } from 'react'
 import { Calculator, Plus, Trash2, Package, Scissors, Info, Grid3X3, Sparkles, FileText, Download, Edit3, Save, X, Clock, Zap, Brain } from 'lucide-react'
 import FoamPiece3D from './FoamPiece3D'
+import Enhanced3DVisualization from './Enhanced3DVisualization'
 import FoamCutSlice2D from './FoamCutSlice2D'
 import OptimizationEngine from '../utils/optimizationEngine'
 import { AdvancedOptimizationEngine } from '../utils/advancedOptimizationEngine'
 import { GuillotineCuttingEngine } from '../utils/guillotineCuttingEngine'
 import AlgorithmDashboard from './AlgorithmDashboard'
 import CuttingInstructions from './CuttingInstructions'
+import MaterialLibrary from './MaterialLibrary'
+import ProjectTemplates from './ProjectTemplates'
+import AdvancedReportSystem from './AdvancedReportSystem'
 
 interface FoamPiece {
   id: string
@@ -124,6 +128,9 @@ export default function FoamCutOptimizer() {
     quantity: '',
     label: ''
   })
+  const [showMaterialLibrary, setShowMaterialLibrary] = useState(false)
+  const [showProjectTemplates, setShowProjectTemplates] = useState(false)
+  const [showAdvancedReport, setShowAdvancedReport] = useState(false)
 
   // Form state'leri
   const [newPiece, setNewPiece] = useState({
@@ -923,6 +930,50 @@ export default function FoamCutOptimizer() {
     }
   }
 
+  // Materyal Kütüphanesi'nden seçim
+  const handleMaterialSelect = (material: any) => {
+    const newStock: StockFoam = {
+      id: Date.now().toString(),
+      length: material.length,
+      width: material.width,
+      height: material.height,
+      quantity: 1,
+      label: material.name
+    }
+    setStockFoams([...stockFoams, newStock])
+    setShowMaterialLibrary(false)
+    setShowEfficiencyWarning(`${material.name} malzemesi eklendi!`)
+  }
+
+  // Proje Şablonu seçimi
+  const handleTemplateSelect = (template: any) => {
+    // Mevcut parçaları temizle ve şablon parçalarını ekle
+    const templatePieces: FoamPiece[] = template.pieces.map((piece: any, index: number) => ({
+      id: Date.now().toString() + '_' + index,
+      length: piece.length,
+      width: piece.width,
+      height: piece.height,
+      quantity: piece.quantity,
+      label: piece.label,
+      color: piece.color || `hsl(${Math.random() * 360}, 65%, 55%)`
+    }))
+    
+    // Stok malzemelerini ekle
+    const templateStocks: StockFoam[] = template.stockMaterials.map((stock: any, index: number) => ({
+      id: Date.now().toString() + '_stock_' + index,
+      length: stock.length,
+      width: stock.width,
+      height: stock.height,
+      quantity: stock.quantity,
+      label: stock.label
+    }))
+    
+    setPieces(templatePieces)
+    setStockFoams(templateStocks)
+    setShowProjectTemplates(false)
+    setShowEfficiencyWarning(`${template.name} şablonu yüklendi! ${templatePieces.length} parça ve ${templateStocks.length} malzeme eklendi.`)
+  }
+
   // İsraf Optimizasyonu - Kalan parçaları tekrar böl
   const optimizeWaste = async () => {
     if (!optimizationResult) {
@@ -1022,10 +1073,27 @@ export default function FoamCutOptimizer() {
               </div>
             </div>
             <div className="flex items-center space-x-2">
+              <button
+                onClick={() => setShowMaterialLibrary(true)}
+                className="btn btn-secondary text-sm"
+                title="Materyal Kütüphanesi"
+              >
+                <Package className="w-4 h-4 mr-2" />
+                Materyaller
+              </button>
+              
+              <button
+                onClick={() => setShowProjectTemplates(true)}
+                className="btn btn-secondary text-sm"
+                title="Proje Şablonları"
+              >
+                <Sparkles className="w-4 h-4 mr-2" />
+                Şablonlar
+              </button>
+              
               <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
                 v2.0 Pro
               </span>
-              <Sparkles className="w-5 h-5 text-blue-600" />
             </div>
           </div>
         </div>
@@ -1529,19 +1597,29 @@ export default function FoamCutOptimizer() {
               </div>
             )}
 
-            {/* 3D Visualization */}
+            {/* Enhanced 3D Visualization */}
             <div className="card p-6">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
-                  <Grid3X3 className="w-5 h-5 text-purple-600" />
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <Grid3X3 className="w-5 h-5 text-purple-600" />
+                  </div>
+                  <div>
+                    <h2 className="text-lg font-semibold text-gray-900">Gelişmiş 3D Görselleştirme</h2>
+                    <p className="text-sm text-gray-500">İnteraktif 3D model ve analiz araçları</p>
+                  </div>
                 </div>
-                <div>
-                  <h2 className="text-lg font-semibold text-gray-900">3D Görselleştirme</h2>
-                  <p className="text-sm text-gray-500">İnteraktif 3D model</p>
+                
+                <div className="flex items-center space-x-2">
+                  <span className="px-2 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-medium">
+                    AI Görselleştirme
+                  </span>
+                  <Sparkles className="w-4 h-4 text-purple-600" />
                 </div>
               </div>
-              <div className="min-h-64 sm:min-h-80 bg-gray-100 rounded-lg border border-gray-200 overflow-hidden">
-                <FoamPiece3D 
+              
+              <div className="min-h-96 bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg border border-gray-200 overflow-hidden">
+                <Enhanced3DVisualization 
                   pieces={pieces} 
                   stockFoams={stockFoams}
                   optimizationResult={optimizationResult}
@@ -1644,14 +1722,24 @@ export default function FoamCutOptimizer() {
                 Tüm optimizasyon sonuçlarını, malzeme listelerini ve kesim planlarını içeren kapsamlı PDF raporu oluşturun.
               </p>
             </div>
-            <button
-              onClick={generatePDFReport}
-              className="btn btn-primary text-base px-8 py-3"
-            >
-              <FileText className="w-5 h-5 mr-2" />
-              PDF RAPORU OLUŞTUR
-              <Download className="w-4 h-4 ml-2" />
-            </button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button
+                onClick={generatePDFReport}
+                className="btn btn-secondary text-base px-6 py-3"
+              >
+                <FileText className="w-5 h-5 mr-2" />
+                Basit Rapor
+              </button>
+              
+              <button
+                onClick={() => setShowAdvancedReport(true)}
+                className="btn btn-primary text-base px-6 py-3"
+              >
+                <Sparkles className="w-5 h-5 mr-2" />
+                Gelişmiş Analiz Raporu
+                <Download className="w-4 h-4 ml-2" />
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -1718,6 +1806,32 @@ export default function FoamCutOptimizer() {
           </div>
         </div>
       </footer>
+
+      {/* Material Library Modal */}
+      {showMaterialLibrary && (
+        <MaterialLibrary
+          onSelectMaterial={handleMaterialSelect}
+          onClose={() => setShowMaterialLibrary(false)}
+        />
+      )}
+
+      {/* Project Templates Modal */}
+      {showProjectTemplates && (
+        <ProjectTemplates
+          onSelectTemplate={handleTemplateSelect}
+          onClose={() => setShowProjectTemplates(false)}
+        />
+      )}
+
+      {/* Advanced Report System Modal */}
+      {showAdvancedReport && optimizationResult && (
+        <AdvancedReportSystem
+          optimizationResult={optimizationResult}
+          pieces={pieces}
+          stockFoams={stockFoams}
+          onClose={() => setShowAdvancedReport(false)}
+        />
+      )}
     </div>
   )
 } 
